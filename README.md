@@ -69,3 +69,5 @@ usage: benchmark.sh [options]
 # 压测工具默认会不统计最后调用10秒
 ./benchmark.sh -b BenchmarkRandom_1k -h 127.0.0.1 -p 20880 -d 300 -w 30
 ```
+
+六、完整开发实例，可以切到run_test分支
