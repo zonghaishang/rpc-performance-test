@@ -45,10 +45,10 @@ public class BenchmarkRandom_1k extends AbstractExchangeRunnable {
 1. 打包工程
 
 ```shell
-mvn clean package
+mvn clean assembly:assembly
 ```
 
-2. 复制本地测试工程jar到`rpc.benchmark/ext`目录
+2. 复制本地测试工程jar-with-dependencies.jar到`rpc.benchmark/ext`目录
 
 3. 执行压测
 
