@@ -1,3 +1,13 @@
+目前测试用facade api包含在开源仓库：
+
+https://github.com/sofastack-guides/sofastack-mesh-demo.git
+对应的分支：benchmark
+
+在测试时，可以把dubbo-echo-server注册中心禁用掉，这样本地启动server即可。
+```
+<dubbo:registry address="N/A"/>
+```
+
 一、在pom.xml引入测试api facade
 
 二、获取压测工程
