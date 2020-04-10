@@ -9,11 +9,11 @@ import com.opensource.rpc.benchmark.InvokeOption;
 
 /**
  * @author yiji
- * @version : BenchmarkRandom_1k.java, v 0.1 2020年04月10日 10:49 上午 yiji Exp $
+ * @version : BenchmarkRandom_512.java, v 0.1 2020年04月10日 2:02 下午 yiji Exp $
  */
-public class BenchmarkRandom_1k extends AbstractRandomRunnable {
+public class BenchmarkRandom_512_byte extends AbstractRandomRunnable {
 
-    public BenchmarkRandom_1k(InvokeOption option) {
+    public BenchmarkRandom_512_byte(InvokeOption option) {
         super(option);
     }
 
@@ -24,6 +24,6 @@ public class BenchmarkRandom_1k extends AbstractRandomRunnable {
          * 如果返回值不为空并且没有异常抛出，认为调用成功.
          */
         BenchmarkService benchmarkService = (BenchmarkService) serviceFactory.getReference(BenchmarkService.class);
-        return benchmarkService.send_1k(randomString(1024));
+        return benchmarkService.send_512_byte(randomString(512));
     }
 }
