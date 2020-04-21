@@ -17,7 +17,7 @@ tar -xzvf rpc-performance-xx.tar.gz
 # 解压后生成rpc.benchmark目录
 ```
 
-三、开发压测接口实现类(eg: BenchmarkRandom_1k)，并且继承AbstractExchangeRunnable并实现doInvoke方法
+三、开发压测接口实现类(eg: BenchmarkBoltRpcInvoke)，并且继承AbstractBoltExchangeRunnable并实现doInvoke方法
 
 参考实现：
 
