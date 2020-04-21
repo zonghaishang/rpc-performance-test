@@ -22,9 +22,9 @@ tar -xzvf rpc-performance-xx.tar.gz
 参考实现：
 
 ```java
-public class BenchmarkRandom_1k extends AbstractExchangeRunnable {
+public class BenchmarkBoltRpcInvoke extends AbstractBoltExchangeRunnable {
 
-    public BenchmarkRandom_1k(InvokeOption option) {
+    public BenchmarkBoltRpcInvoke(InvokeOption option) {
         super(option);
     }
 
@@ -34,8 +34,8 @@ public class BenchmarkRandom_1k extends AbstractExchangeRunnable {
          * 通过serviceFactory获取接口proxy,
          * 如果返回值不为空并且没有异常抛出，认为调用成功.
          */
-        BenchmarkService benchmarkService = (BenchmarkService) serviceFactory.getReference(BenchmarkService.class);
-        return benchmarkService.send_1k(randomString(1024));
+        SofaEchoService sofaEchoService = (SofaEchoService) serviceFactory.getReference(SofaEchoService.class);
+        return sofaEchoService.echo(REQUEST_TEMPLATE);
     }
 }
 ```
@@ -67,7 +67,7 @@ usage: benchmark.sh [options]
 
 # 开始压测, 为了测试结果更准确，建议warm up 30秒.
 # 压测工具默认会不统计最后调用10秒
-./benchmark.sh -b com.demo.rpc.benchmark.BenchmarkRandom_1k -h 127.0.0.1 -p 20880 -d 300 -w 30
+./benchmark.sh -b com.demo.rpc.benchmark.BenchmarkBoltRpcInvoke -h 127.0.0.1 -p 12200 -d 300 -w 30
 ```
 
 五、本项目依赖facade指引
@@ -78,8 +78,3 @@ https://github.com/sofastack-guides/sofastack-mesh-demo.git
 对应的分支：benchmark
 
 1. 本机进入sofastack-mesh-demo根目录，执行mvn clean install一下
-
-2. 在测试时，可以把dubbo-echo-server注册中心禁用掉，这样本地启动server即可。
-```
-<dubbo:registry address="N/A"/>
-```
