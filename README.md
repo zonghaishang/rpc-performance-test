@@ -67,7 +67,22 @@ usage: benchmark.sh [options]
 
 # 开始压测, 为了测试结果更准确，建议warm up 30秒.
 # 压测工具默认会不统计最后调用10秒
-./benchmark.sh -b BenchmarkRandom_1k -h 127.0.0.1 -p 20880 -d 300 -w 30
+./benchmark.sh -b com.demo.rpc.benchmark.BenchmarkRandom_1k -h 127.0.0.1 -p 20880 -d 300 -w 30
 ```
+
+五、本项目依赖facade指引
+
+目前测试用facade api包含在开源仓库：
+
+https://github.com/sofastack-guides/sofastack-mesh-demo.git
+对应的分支：benchmark
+
+1. 本机进入sofastack-mesh-demo根目录，执行mvn clean install一下
+
+2. 在测试时，可以把dubbo-echo-server注册中心禁用掉，这样本地启动server即可。
+```
+<dubbo:registry address="N/A"/>
+```
+
 
 六、完整开发实例，可以切到run_test分支
