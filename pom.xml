@@ -27,7 +27,7 @@
             <groupId>com.opensource.rpc.benchmark</groupId>
             <artifactId>rpc-performance</artifactId>
             <version>${rpc.performance.version}</version>
-            <scope>runtime</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
