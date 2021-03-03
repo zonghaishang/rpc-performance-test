@@ -11,9 +11,9 @@ import com.opensource.rpc.benchmark.InvokeOption;
  * @author yiji
  * @version : BenchmarkRandom_512.java, v 0.1 2020年04月10日 2:02 下午 yiji Exp $
  */
-public class BenchmarkRandom_512_byte extends AbstractRandomRunnable {
+public class BenchmarkRandom_512 extends AbstractRandomRunnable {
 
-    public BenchmarkRandom_512_byte(InvokeOption option) {
+    public BenchmarkRandom_512(InvokeOption option) {
         super(option);
     }
 

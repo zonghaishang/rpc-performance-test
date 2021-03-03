@@ -4,7 +4,7 @@
  */
 package com.demo.rpc.benchmark;
 
-import com.opensource.rpc.benchmark.AbstractExchangeRunnable;
+import com.opensource.rpc.benchmark.AbstractBoltExchangeRunnable;
 import com.opensource.rpc.benchmark.InvokeOption;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -12,7 +12,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  * @author yiji
  * @version : AbstractRandomRunnable.java, v 0.1 2020年04月10日 1:58 下午 yiji Exp $
  */
-public abstract class AbstractRandomRunnable extends AbstractExchangeRunnable {
+public abstract class AbstractRandomRunnable extends AbstractBoltExchangeRunnable {
 
     static char[] chars = new char[] {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

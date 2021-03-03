@@ -13,6 +13,8 @@ import com.opensource.rpc.benchmark.InvokeOption;
  */
 public class BenchmarkRandom_8k extends AbstractRandomRunnable {
 
+    final static int _8k = 1024 * 8;
+
     public BenchmarkRandom_8k(InvokeOption option) {
         super(option);
     }
@@ -24,6 +26,6 @@ public class BenchmarkRandom_8k extends AbstractRandomRunnable {
          * 如果返回值不为空并且没有异常抛出，认为调用成功.
          */
         BenchmarkService benchmarkService = (BenchmarkService) serviceFactory.getReference(BenchmarkService.class);
-        return benchmarkService.send_8k(randomString(1024 * 8));
+        return benchmarkService.send_8k(randomString(_8k));
     }
 }
